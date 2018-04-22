@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+public class Num {
+public static int  sum (long n)
+    {
+        int x=0;
+        while(n>0)
+        {
+            if (n==0)
+                return x;
+            else
+            {
+                x+=n%10;
+                n=(n/10);
+            }
+        }
+        return x;
+    }
+    public static void main(String[] args) {
+        long n;
+        System.out.println("Enter the number");
+        Scanner in= new Scanner (System.in);
+        n=in.nextLong();
+        System.out.println("Sum of given number is " + sum(n));
+    }
+    
+}
+
+
+
