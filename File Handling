@@ -1,0 +1,67 @@
+
+import java.io.*;
+public class RFile {
+
+    /**
+     * to copy the source file to destination file, run following command on command line
+     * java RFile <source> <destination>
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO Auto-generated method stub
+        int i;
+        FileInputStream fin;
+        FileOutputStream fout;
+        try
+        {
+            //open input file
+            try
+            {
+                fin=new FileInputStream(args[0]);
+            }
+            catch(FileNotFoundException e)
+            {
+                System.out.println("Input file not found");
+                return;
+            }
+            //open output file
+            try
+            {
+                fout=new FileOutputStream(args[1]);
+            } 
+            catch(FileNotFoundException e)
+            {
+                System.out.println("Error opening output file");
+                return;
+            }
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("Usage : RFile From To");
+            return;
+        }
+        //Copy File
+        try
+        {
+            do
+            {
+                i=fin.read();
+                if(i!=-1)
+                    fout.write(i);
+            }
+            while(i!=-1);
+            
+        }
+        catch(IOException e)
+        {
+            System.out.println("File Error");
+        
+        }
+        fin.close();
+        fout.close();
+    }
+
+}
+
+
+
+
