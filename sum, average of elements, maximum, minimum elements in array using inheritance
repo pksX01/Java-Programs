@@ -1,0 +1,91 @@
+
+
+import java.util.*;
+public class Numerical {
+    int arr[]= new int [10];
+}
+
+public class Numplay extends Numerical{
+    
+    void display(int x)
+    {
+        System.out.println("Entered number is "+ x);
+    }
+    
+    int sum( int arr[] )
+    {
+        int add=0;
+        for(int i=0;i<10;i++)
+            add+=arr[i];
+        return add;
+    }
+    
+    double avg(int arr[])
+    {
+        double add=0;
+        for(int i=0;i<10;i++)
+            add+=arr[i];
+        return (add/10);
+    }
+    
+    int max(int arr[])
+    {
+        int temp1=Integer.MIN_VALUE;
+        for(int i=0;i<10;i++)
+            if(arr[i]>temp1)
+                temp1=arr[i];
+        return temp1;
+    }
+    
+    int min(int arr[])
+    {
+        int temp2=Integer.MAX_VALUE;
+        for(int i=0;i<10;i++)
+            if(arr[i]<temp2)
+                temp2=arr[i];
+        return temp2;
+    }
+    
+}
+
+public class MenuMain {
+    public static void main(String[] args) {
+        int ch;
+        Scanner in = new Scanner(System.in);
+        Numplay num = new Numplay();
+        System.out.println("Enter the elements of array : ");
+        for(int i=0;i<10;i++)
+            num.arr[i]=in.nextInt();
+        System.out.println("Enter your choice : ");
+        ch=in.nextInt();
+        
+        {
+            switch(ch)
+            {
+                case 1 :
+                    num.display(num.arr[1]);
+                    break;
+                case 2 :
+                    System.out.println("Sum of array is "+ num.sum(num.arr));
+                    break;
+                case 3 :
+                    System.out.println("Average of array is "+ num.avg(num.arr));
+                    break;
+                case 4 :
+                    System.out.println("Maximum element of array is "+ num.max(num.arr));
+                    break;
+                case 5 :
+                    System.out.println("Minimum element of array is "+ num.min(num.arr));
+                    break;
+                    
+            }
+        }
+
+    }
+
+}
+
+
+
+
+
