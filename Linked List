@@ -1,0 +1,36 @@
+
+import java.util.*;
+public class RLinkedList {
+    public static void main(String[] args) {
+        LinkedList R=new LinkedList(); //creating a linked list
+        //adding elements to linked list
+        R.add("R");
+        R.add("U");
+        R.add("D");
+        R.add("R");
+        R.add("A");
+        System.out.println(" Linked list : " + R);
+        //getting 1st and last elements of linked list
+        System.out.println("1st element of linked list is " + R.getFirst());
+        System.out.println("last element of linked list is " +R.getLast());
+        //Removing 1st and last elements
+        R.removeFirst();
+        R.removeLast();
+        System.out.println(" Linked list after removal of first and last elements : " + R);
+        //Adding elements at 1st and last position
+        R.addFirst("P");
+        R.addLast("N");
+        System.out.println(" Linked list after addition of first and last elements : " + R);
+        //Remove selected elements
+        R.remove("U");
+        R.remove("D");
+        R.remove("R");
+        System.out.println(" Linked list after removing selected elements : " + R);
+        //Adding elements at selected elements
+        R.add(1,"A");
+        R.add(2,"V");
+        R.add(3,"A");
+        System.out.println(" Linked list after addition of elements at selected elements : " + R);
+    }
+}
+
