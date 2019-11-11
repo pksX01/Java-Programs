@@ -1,0 +1,6 @@
+class PaymentDemo{
+    public static void main(String[] args) {
+        ProcessPayment pp = new ProcessPayment();
+        pp.process(new CreditCard());
+    }
+}
